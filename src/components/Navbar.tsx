@@ -163,9 +163,9 @@ export function Navbar() {
       </AnimatePresence>
 
       <AlertDialog open={showLogoutAlert} onOpenChange={setShowLogoutAlert}>
-        <AlertDialogContent className="rounded-2xl border-border bg-orange-50 shadow-xl">
+        <AlertDialogContent className="rounded-2xl border-border bg-white shadow-xl">
           <AlertDialogHeader>
-            <AlertDialogTitle className="font-lora text-xl text-foreground">Are you sure you want to log out? </AlertDialogTitle>
+            <AlertDialogTitle className="font-lora text-xl text-foreground">Are you sure ? </AlertDialogTitle>
             <AlertDialogDescription className="text-foreground/80">
               You’re about to sign out of your ZESTRAW account. <br />Once logged out, you’ll need to sign back in to access your orders, profile, and personalized settings.
             </AlertDialogDescription>

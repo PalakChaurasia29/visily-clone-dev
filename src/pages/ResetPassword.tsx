@@ -34,7 +34,7 @@ export default function ResetPasswordPage() {
             return;
         }
 
-        resetPassword(password, token, navigate)(null);
+        resetPassword(password, token, navigate);
     };
 
     return (

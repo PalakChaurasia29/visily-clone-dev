@@ -39,9 +39,8 @@ export default function LoginPage() {
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center px-6 relative z-10">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 mb-8">
-          <img src={logo} alt="" className="w-28 md:w-32 h-auto" />
+        <Link to="/" className="text-sm text-muted-foreground mb-6 hover:text-foreground flex items-center gap-1 self-start md:self-center">
+          ← Back to home
         </Link>
 
         <motion.h1
