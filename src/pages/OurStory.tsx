@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Leaf, Flame, ChevronRight, ChevronDown, Target, Eye } from "lucide-react";
 import { useState } from "react";
-import riceField from "@/assets/rice-field.jpg";
+import storyHero from "@/assets/story-hero.jpg";
 import paraliImage from "@/assets/parali-crisis.jpg";
 import heroTableware from "@/assets/hero-tableware.jpg";
 
@@ -55,7 +55,7 @@ export default function OurStoryPage() {
               </motion.div>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
-              <img src={riceField} alt="Rice fields" className="rounded-2xl w-full object-cover" />
+              <img src={storyHero} alt="Rice fields" className="rounded-2xl w-full object-cover" />
             </motion.div>
           </div>
         </div>

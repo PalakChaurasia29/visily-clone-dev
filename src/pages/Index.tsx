@@ -23,55 +23,56 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-secondary overflow-hidden">
-        <div className="container mx-auto px-6 py-16 md:py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div initial="hidden" animate="visible" variants={stagger}>
-              <motion.div variants={fadeUp}>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-eco-light text-eco text-xs font-semibold mb-6">
-                  <Leaf className="w-3 h-3" /> Sustainable Innovation
-                </span>
-              </motion.div>
-              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Turning{" "}
-                <span className="text-gradient-primary italic">Parali</span> into
-                Purposeful Plates.
+      <section className="bg-[#fff5ed] overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-20">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="grid lg:grid-cols-2 gap-8 items-center"
+          >
+            <motion.div variants={stagger}>
+              <motion.h1
+                variants={fadeUp}
+                className="text-4xl lg:text-5xl font-bold font-lora text-foreground leading-relaxed mb-6"
+              >
+                Meals made with love deserve thoughtful plates.
               </motion.h1>
-              <motion.p variants={fadeUp} className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-md">
+              <motion.p
+                variants={fadeUp}
+                className="text-lg text-muted-foreground mb-8 max-w-md leading-relaxed"
+              >
                 Premium, biodegradable tableware crafted from rice straw residue. Combatting air pollution while elevating your dining experience.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-8">
                 <Link
                   to="/shop"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-colors"
                 >
-                  Shop Now
+                  Book a Sample Kit
                 </Link>
                 <Link
                   to="/impact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border font-semibold text-sm hover:bg-accent transition-colors"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-border bg-card text-foreground rounded-full font-semibold hover:bg-accent transition-colors"
                 >
-                  Our Impact
+                  Shop Now
                 </Link>
               </motion.div>
-              <motion.div variants={fadeUp} className="flex items-center gap-2 mt-6 text-sm text-muted-foreground">
-                <Leaf className="w-4 h-4 text-eco" />
-                <span>100% Compostable · <strong>Soil to Soil</strong></span>
-              </motion.div>
+             
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
               <img
                 src={heroImage}
-                alt="ZESTRAW eco-friendly tableware"
-                className="rounded-2xl w-full object-cover shadow-lg"
+                alt="ZESTRAW eco-friendly tableware collection"
+                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
               />
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -79,17 +80,17 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-3">Impact in Numbers</motion.h2>
+            <motion.h2 variants={fadeUp} className="text-3xl font-bold font-lora mb-3">Impact in Numbers</motion.h2>
             <motion.p variants={fadeUp} className="text-muted-foreground mb-12 max-w-lg mx-auto">
               Every ZESTRAW plate you use directly contributes to a healthier planet.
             </motion.p>
             <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
               {[
-                { icon: <Leaf className="w-6 h-6 text-eco" />, value: "1,240 Tons", label: "CO₂ EMISSIONS SAVED" },
-                { icon: <Flame className="w-6 h-6 text-primary" />, value: "4,500 Acres", label: "STUBBLE BURNING AVOIDED" },
-                { icon: <Droplets className="w-6 h-6 text-eco" />, value: "15,000", label: "TREES EQUIVALENT SAVED" },
+                { icon: <Leaf className="w-6 h-6 text-eco bg-auto" />, value: "1,240 Tons", label: "CO₂ EMISSIONS SAVED" },
+                { icon: <Flame className="w-6 h-6 text-primary bg-auto" />, value: "4,500 Acres", label: "STUBBLE BURNING AVOIDED" },
+                { icon: <Droplets className="w-6 h-6 text-eco bg-auto" />, value: "15,000", label: "TREES EQUIVALENT SAVED" },
               ].map((stat) => (
-                <div key={stat.label} className="flex flex-col items-center gap-3 p-6">
+                <div key={stat.label} className="flex flex-col items-center gap-3 p-6 border border-border rounded-2xl shadow-[0_4px_10px_0_rgba(0,0,0,0.1)]">
                   <div className="w-12 h-12 rounded-full bg-eco-light flex items-center justify-center">{stat.icon}</div>
                   <span className="text-3xl font-bold">{stat.value}</span>
                   <span className="text-xs text-muted-foreground tracking-wide uppercase">{stat.label}</span>
@@ -101,35 +102,48 @@ const Index = () => {
       </section>
 
       {/* From Smog to Sustainable Splendor */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div variants={fadeUp}>
-              <img src={paraliImage} alt="Rice straw fields" className="rounded-2xl w-full object-cover" />
-              <div className="mt-4 p-4 bg-card rounded-xl">
-                <p className="text-sm italic text-muted-foreground">"Solving the Haze"</p>
-                <p className="text-xs text-muted-foreground mt-1">Every year, thousands of tons of rice straw are burned across northern India, creating massive air pollution.</p>
+      <section className="py-16 bg-card">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <motion.div variants={fadeUp} className="relative rounded-2xl overflow-hidden">
+              <img src={riceField} alt="Rice fields - from smog to sustainability" className="w-full object-cover aspect-[4/3] rounded-2xl" />
+              <div className="absolute bottom-4 left-4 bg-card/90 backdrop-blur-sm rounded-xl p-4 max-w-[200px]">
+                <p className="text-xs text-muted-foreground italic">"Solving the Haze"</p>
+                <p className="text-xs text-muted-foreground mt-1">Every year, thousands of acres of rice straw are burned, creating severe smog.</p>
               </div>
             </motion.div>
-            <motion.div variants={fadeUp}>
-              <span className="text-xs font-semibold text-primary uppercase tracking-wider">OUR STORY</span>
-              <h2 className="text-3xl font-bold mt-2 mb-4">From Smog to Sustainable Splendor.</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+            <motion.div variants={stagger}>
+              <motion.span variants={fadeUp} className="inline-flex px-3 py-1 bg-amber-light text-primary text-xs font-semibold rounded-full mb-4">OUR STORY</motion.span>
+              <motion.h2 variants={fadeUp} className="text-3xl lg:text-4xl font-lora font-bold mb-4">
+                From Smog to Sustainable Splendor.
+              </motion.h2>
+              <motion.p variants={fadeUp} className="text-muted-foreground leading-relaxed mb-6">
                 The "Parali" problem isn't just an agricultural issue—it's a public health crisis. By providing farmers an alternative to burning, ZESTRAW creates a circular economy. Our innovative heat-press molding technology converts raw rice straw into durable, premium tableware that returns to the earth in 90 days.
-              </p>
-              <div className="grid grid-cols-2 gap-6 mb-6">
+              </motion.p>
+              <motion.div variants={fadeUp} className="grid grid-cols-2 gap-6 mb-8">
                 <div>
-                  <span className="text-2xl font-bold">90 Days</span>
-                  <p className="text-xs text-muted-foreground">Home Compostable</p>
+                  <p className="text-2xl font-lora font-bold text-foreground">90 Days</p>
+                  <p className="text-sm text-muted-foreground">Home Compostable</p>
                 </div>
                 <div>
-                  <span className="text-2xl font-bold">0%</span>
-                  <p className="text-xs text-muted-foreground">PFAS or Chemicals</p>
+                  <p className="text-2xl font-lora font-bold text-foreground">0%</p>
+                  <p className="text-sm text-muted-foreground">Plastic or Chemicals</p>
                 </div>
-              </div>
-              <Link to="/our-story" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                Discover Our Process <ChevronRight className="w-4 h-4" />
-              </Link>
+              </motion.div>
+              <motion.div variants={fadeUp}>
+                <Link
+                  to="/our-story"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  Discover Our Process
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
@@ -137,11 +151,11 @@ const Index = () => {
 
       {/* Conscious Collections */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-2 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <div className="flex justify-between items-end mb-10">
+            <div className="flex justify-between items-end mb-10  px-4 md:px-6">
               <div>
-                <motion.h2 variants={fadeUp} className="text-3xl font-bold">Conscious Collections</motion.h2>
+                <motion.h2 variants={fadeUp} className="text-3xl font-lora font-bold">Conscious Collections</motion.h2>
                 <motion.p variants={fadeUp} className="text-muted-foreground mt-1">High-performance tableware that doesn't cost the Earth.</motion.p>
               </div>
               <motion.div variants={fadeUp}>
@@ -150,7 +164,7 @@ const Index = () => {
                 </Link>
               </motion.div>
             </div>
-            <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {[
                 { name: "Classic Dinner Plate", price: "$24.00", img: productPlates, badge: "Best" },
                 { name: "Organic Bowl Set", price: "$18.00", img: productBowls, badge: "New" },
@@ -184,7 +198,7 @@ const Index = () => {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-3">Why Choose ZESTRAW?</motion.h2>
+            <motion.h2 variants={fadeUp} className="text-3xl font-bold font-lora mb-3">Why Choose ZESTRAW?</motion.h2>
             <motion.p variants={fadeUp} className="text-muted-foreground mb-12">Beyond sustainability, we deliver uncompromised quality.</motion.p>
             <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -195,7 +209,7 @@ const Index = () => {
               ].map((feature) => (
                 <div key={feature.title} className="flex flex-col items-center gap-3 p-4">
                   <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary">{feature.icon}</div>
-                  <h3 className="font-semibold text-sm">{feature.title}</h3>
+                  <h3 className="font-semibold text-sm font-lora ">{feature.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
@@ -245,7 +259,7 @@ const Index = () => {
         </div>
         <div className="relative container mx-auto px-6 py-20 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold font-lora text-primary-foreground mb-4">
               Ready to make the switch?
             </motion.h2>
             <motion.p variants={fadeUp} className="text-primary-foreground/80 mb-8 max-w-md mx-auto">

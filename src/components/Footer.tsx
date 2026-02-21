@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram, Twitter } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import logo from "../assets/logo.png";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -24,12 +25,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 text-primary-foreground" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                </svg>
-              </div>
-              <span className="font-display text-xl font-bold">ZESTRAW</span>
+              <img src={logo} alt="logo" className="w-28 md:w-32 h-auto"/>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Revolutionizing dining with tableware crafted from agricultural residue. Join us in turning parali into purposeful plates.
@@ -45,7 +41,7 @@ export function Footer() {
 
           {/* Shop */}
           <div>
-            <h4 className="font-display font-semibold text-sm mb-4">Shop ZESTRAW</h4>
+            <h4 className="font-lora font-semibold text-sm mb-4">Shop ZESTRAW</h4>
             <ul className="space-y-2.5">
               {["All Products", "Bulk Orders", "New Arrivals", "Eco-Kits"].map((item) => (
                 <li key={item}>
@@ -57,7 +53,7 @@ export function Footer() {
 
           {/* Transparency */}
           <div>
-            <h4 className="font-display font-semibold text-sm mb-4">Transparency</h4>
+            <h4 className="font-lora font-semibold text-sm mb-4">Transparency</h4>
             <ul className="space-y-2.5">
               {["Sustainability Report", "Our Process", "Certifications", "Composting Guide"].map((item) => (
                 <li key={item}>
@@ -69,7 +65,7 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-display font-semibold text-sm mb-4">Stay Conscious</h4>
+            <h4 className="font-lora font-semibold text-sm mb-4">Stay Conscious</h4>
             <p className="text-sm text-muted-foreground mb-4">Get updates on our impact and new sustainable releases.</p>
             <form onSubmit={handleSubscribe} className="flex">
               <input

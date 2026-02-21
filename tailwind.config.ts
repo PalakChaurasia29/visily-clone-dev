@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        lora: ['Lora', 'serif'],
         display: ['"Playfair Display"', 'serif'],
         body: ['"DM Sans"', 'sans-serif'],
       },
